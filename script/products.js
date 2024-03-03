@@ -26,4 +26,5 @@ export const products = [
            "red velvet"
          ]
        },
-]
+];
+

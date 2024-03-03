@@ -207,7 +207,7 @@ section{
 }
 
 .blogs{
-    background: url(images/backGround.png) no-repeat;
+    background: url(images/images/backGround.png) no-repeat;
     background-size: cover;
     background-position: center center;
 }
@@ -251,7 +251,7 @@ section{
 }
  
 .newsletter{
-    background: url(images/new.jpg) no-repeat;
+    background: url(images/images/new.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
     background-attachment: fixed;
@@ -334,7 +334,7 @@ section{
 }
 
 .footer {
-    background: url(images/backGround.png) no-repeat;
+    background: url(images/images/backGround.png) no-repeat;
     background-size: cover;
     background-position: center center;
 }

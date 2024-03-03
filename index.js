@@ -1,4 +1,23 @@
 
+
+import { products } from "./script/products.js";
+let productsHTML = '';
+let productswiperHTML='';
+products.forEach((product)=>{
+    productsHTML += ` 
+      
+    `
+        
+  });
+
+  console.log(productswiperHTML);
+  document.querySelector('.js-product').innerHTML = productsHTML;
+
+
+
+
+
+//eta bata swiper haru ko frontend 
 let navbar = document.querySelector('.navbar');
 document.querySelector('#menu-bar').onclick=() =>{
     navbar.classList.toggle('active');
@@ -13,7 +32,7 @@ document.querySelector('#search').onclick=() =>{
 
 
 var swiper = new Swiper(".product-row", {
-    spaceBetween: 30,
+    spaceBetween: 10,
     loop:true,
     centeredSlides:true,
     autoplay:{
