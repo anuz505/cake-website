@@ -26,5 +26,33 @@ export const products = [
            "red velvet"
          ]
        },
+    {
+        id: "asdnvnvuasdfjvna",
+         image: "images/images/cake4.jpg",
+         name: "Cake4",
+         priceCents: 2000,
+         keywords: [
+           "red "
+         ]
+       },
+    {
+      id: "asdvnvnauqewoejgn",
+         image: "images/images/cake5.jpg",
+         name: "Cake5",
+         priceCents: 2000,
+         keywords: [
+           "redaasdv "
+         ]
+    },
+    {
+      id: "anvaweairuqodjfapdsk",
+         image: "images/images/cake6.jpg",
+         name: "Cake6",
+         priceCents: 2000,
+         keywords: [
+           "black "
+         ]
+    }
+
 ];
 
