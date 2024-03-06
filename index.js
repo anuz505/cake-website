@@ -26,6 +26,18 @@ products.forEach((product)=>{
   console.log(productsHTML);
   document.querySelector('.js-product-grid').innerHTML = productsHTML;
 
+  function updateCartQuantity(){
+    let cartQuantity = 0;
+  
+    cart.forEach((cartItem) => {
+      cartQuantity += cartItem.quantity;
+    });
+  
+    document.querySelector('.js-cart-quantity')
+      .innerHTML = cartQuantity;
+  }
+  
+
 
   
 let navbar = document.querySelector('.navbar');

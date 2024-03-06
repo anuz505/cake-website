@@ -41,6 +41,12 @@ html::-webkit-scrollbar-thumb{
     position: fixed;
     padding: 1.4rem 7%;
     z-index: 999;
+    
+}
+.cart-quantity{
+    padding: 1.4rem 7%;
+    font-size: 2rem;
+    font-weight: bolder;
 }
 .header .logoContent{
     display: flex;
@@ -60,7 +66,13 @@ html::-webkit-scrollbar-thumb{
     margin-right: 3rem;
     color: var(--black);
     font-weight: bold;
+    
 }
+
+.header .navbar a:last-child{
+    margin-right: 0;
+}
+
 .header .navbar a:hover{
     border-bottom: .1rem solid var(--black);
     padding-bottom: .4rem;
