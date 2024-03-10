@@ -47,6 +47,8 @@ html::-webkit-scrollbar-thumb{
     padding: 1.4rem 7%;
     font-size: 2rem;
     font-weight: bolder;
+    display: flex;
+    flex-direction: row;
 }
 .header .logoContent{
     display: flex;

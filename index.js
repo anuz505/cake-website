@@ -1,45 +1,63 @@
-
-
+import { cart, updateCartQuantity } from "./script/cart.js";
 import { products } from "./script/products.js";
-let productsHTML = '';
 
-products.forEach((product)=>{
-    productsHTML += `
-    <div class="swiper-wrapper">
+// Function to generate HTML for product items
+function generateProductHTML(product) {
+    return `
         <div class="swiper-slide box">
             <div class="img">
                 <img src="${product.image}" alt="">
             </div>
             <div class="product-content">
                 <h3>${product.name}</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa adipisci reiciendis assumenda.
-                </p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa adipisci reiciendis assumenda.</p>
                 <div class="orderNow">
-                    <button>Order Now </button>
+                    <button class="js-add-to-cart" data-productid="${product.id}" data-productname="${product.name}">
+                        Order Now
+                    </button>
                 </div>
             </div>
-        </div>
-`
+        </div>`;
+}
 
-        
-  });
-  console.log(productsHTML);
-  document.querySelector('.js-product-grid').innerHTML = productsHTML;
+// Display products in the product section
+const productGrid = document.querySelector('.js-product-grid');
+products.forEach((product) => {
+    productGrid.innerHTML += generateProductHTML(product);
+});
 
-  function updateCartQuantity(){
-    let cartQuantity = 0;
-  
-    cart.forEach((cartItem) => {
-      cartQuantity += cartItem.quantity;
+// Add event listeners for "Order Now" buttons
+document.querySelectorAll('.js-add-to-cart').forEach((button) => {
+    button.addEventListener('click', () => {
+      
+        const productId = button.dataset.productid;
+        const productName = button.dataset.productname;
+        let matchingItem = cart.find((cartItem) => cartItem.id === productId);
+
+        if (matchingItem) {
+            matchingItem.quantity += 1;
+        } else {
+            cart.push({
+                id: productId,
+                name: productName,
+                quantity: 1
+            });
+        }
+
+        updateCartQuantity();
     });
-  
-    document.querySelector('.js-cart-quantity')
-      .innerHTML = cartQuantity;
-  }
-  
+});
+function openCheckout() {
+  // You can use window.location.href to navigate to the checkout.html page
+  window.location.href = "checkout.html";
+}
+
+// Add event listener for "Cart" icon or quantity display
+document.querySelector('.js-cart-quantity').addEventListener('click', openCheckout);
 
 
-  
+
+ //the frontend part 
 let navbar = document.querySelector('.navbar');
 document.querySelector('#menu-bar').onclick=() =>{
     navbar.classList.toggle('active');
